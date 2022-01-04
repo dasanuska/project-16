@@ -1,3 +1,4 @@
+
 var PLAY = 1;
 var END = 0;
 var gameState = PLAY;
@@ -80,17 +81,13 @@ function draw() {
     }
   }
 
-  /*Uncomment correct statement so that 
-  game goes to "END" state 
-  when red balloon is hit*/
-  if (arrowGroup.isTouching(redB)) 
-  if (arrowGroup.Collide(redB)) 
-  if (arrowGroup.isCollide(redB)) 
-  if(frameCount>700)//comment this line after selecting the solution
-  {
+  if (arrowGroup.isTouching(redB)) {
     redB.destroyEach();
+
     gameState=END; 
-   }
+
+
+}
  
   if (gameState === END) {
   bow.destroy();
@@ -104,26 +101,14 @@ function draw() {
   score=score+3;
 }
 
-/*Uncomment correct if block to 
-destroy the blue balloon when hit 
-by the arrows */
 
-  if (arrowGroup.isTouching(blueB)) {
+
+ if (arrowGroup.isTouching(blueB)) {
   blueB.destroyEach();
-   arrowGroup.destroyEach();
-   score=score+2;
- }
+  arrowGroup.destroyEach();
+  score=score+2;
+}
 
-
-  if (arrowGroup.isTouching(redB)) {
-   blueB.destroyEach();
-   arrowGroup.destroyEach();
- }
-
-
-  if (arrowGroup.isTouching(blueB)) {
-   arrowGroup.destroyEach();
- }
 
 
 if (arrowGroup.isTouching(pinkB)) {
